@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 10.10.10.63
 ```
@@ -135,3 +135,4 @@ more < hm.txt:root.txt
 ### Mimikatz
 
 # Lateral Movement
+

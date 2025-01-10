@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.192.26
 ```
@@ -35,3 +35,4 @@ And we get a root shell inmediately
 ### Mimikatz
 
 # Lateral Movement
+

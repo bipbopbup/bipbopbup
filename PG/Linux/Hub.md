@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.223.25
 ```
@@ -64,4 +64,5 @@ https://github.com/SanjinDedic/FuguHub-8.4-Authenticated-RCE-CVE-2024-27697
 
 ### Peass
 ### Mimikatz
+
 

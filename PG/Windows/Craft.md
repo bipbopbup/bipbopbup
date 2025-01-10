@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.229.169
 ```
@@ -69,3 +69,4 @@ File: C:\Program Files (x86)\Common Files\Java\Java Update\jusched.exe (Unquoted
 ### Mimikatz
 
 # Lateral Movement
+

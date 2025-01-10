@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.169.122
 ```
@@ -53,4 +53,5 @@ we get nt authority system
 
 ### Peass
 ### Mimikatz
+
 

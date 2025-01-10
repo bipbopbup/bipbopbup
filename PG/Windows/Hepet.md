@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.187.140
 ```
@@ -68,3 +68,4 @@ sudo swaks -t mailadmin@localhost --from jonas@localhost --attach @file.odt --se
 ### Mimikatz
 
 # Lateral Movement
+

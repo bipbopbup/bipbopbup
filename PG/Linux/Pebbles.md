@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 # IP
 ```
 192.168.198.52
@@ -119,4 +119,5 @@ https://sudsy-fireplace-912.notion.site/Pebbles-from-Proving-Grounds-without-SQL
 
 Linux version 4.4.0-21-generic
 ### Mimikatz
+
 

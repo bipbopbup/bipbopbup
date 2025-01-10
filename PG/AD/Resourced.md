@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.154.175
 ```
@@ -117,3 +117,4 @@ impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.154.175
 ```
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241025183317.png?raw=true)
+

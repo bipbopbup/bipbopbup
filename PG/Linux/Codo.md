@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```
 192.168.176.23
 ```
@@ -49,4 +49,5 @@ root password found with linpeas.sh
 
 
 ### Mimikatz
+
 

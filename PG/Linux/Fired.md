@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.102.96
 ```
@@ -31,3 +31,4 @@ python3 CVE-2023-32315.py -u http://192.168.102.96:9090
 ### Mimikatz
 
 # Lateral Movement
+

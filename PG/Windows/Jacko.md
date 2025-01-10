@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
  192.168.204.66
 ```
@@ -127,3 +127,4 @@ powershell.exe -ep bypass C:\Windows\Temp\PaperTemp.ps1
 ### Mimikatz
 
 # Lateral Movement
+

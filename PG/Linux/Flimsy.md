@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.204.220
 ```
@@ -58,4 +58,5 @@ user ass
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241018111454.png?raw=true)
 
 ### Mimikatz
+
 

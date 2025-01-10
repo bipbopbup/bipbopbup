@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.162.177
 ```
@@ -102,4 +102,5 @@ Por alguna razón no funciona lo que a todo dios le funciona
 C:\Users\p4yl0ad\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
 ### Mimikatz
+
 

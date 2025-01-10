@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.236.224
 ```
@@ -103,4 +103,5 @@ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#services
 
 
 ### Mimikatz
+
 

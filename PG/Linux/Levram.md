@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 
 ## Nmap
 ```
@@ -71,4 +71,5 @@ https://book.hacktricks.xyz/linux-hardening/privilege-escalation/linux-capabilit
 
 
 ### Mimikatz
+
 

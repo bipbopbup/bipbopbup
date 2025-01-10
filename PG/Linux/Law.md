@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.175.190
 ```
@@ -40,3 +40,4 @@ https://github.com/AlexisAhmed/CVE-2022-0847-DirtyPipe-Exploits
 ### Mimikatz
 
 # Lateral Movement
+

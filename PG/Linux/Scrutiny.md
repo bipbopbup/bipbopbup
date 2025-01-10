@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.102.91
 ```
@@ -101,3 +101,4 @@ we have su permissions over
 ### Mimikatz
 
 # Lateral Movement
+

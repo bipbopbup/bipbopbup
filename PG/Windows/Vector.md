@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.167.119
 ```
@@ -47,3 +47,4 @@ Indeed we can execute a powershell as administrator with the latter password, an
 ### Mimikatz
 
 # Lateral Movement
+

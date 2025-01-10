@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.150.21
 ```
@@ -133,3 +133,4 @@ we are NT Authority System
 ### Mimikatz
 
 # Lateral Movement
+

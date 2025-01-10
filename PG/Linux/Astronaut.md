@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.165.12
 ```
@@ -54,4 +54,5 @@ alex:x:1000:1000::/home/alex:/bin/bash
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016184926.png?raw=true)
 
 ### Mimikatz
+
 

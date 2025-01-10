@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 
 ```
@@ -115,3 +115,4 @@ And now we can use evil-winrm to get an administrator shell and the root flag:
 ### Mimikatz
 
 # Lateral Movement
+

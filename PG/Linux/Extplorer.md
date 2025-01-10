@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.168.16
 ```
@@ -44,3 +44,4 @@ and we crack root hash
 ### Mimikatz
 
 # Lateral Movement
+

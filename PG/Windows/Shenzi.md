@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.171.55
 ```
@@ -136,4 +136,5 @@ start-process msiexec "/i $pkg /qn"
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241028161423.png?raw=true)
 
 ### Mimikatz
+
 

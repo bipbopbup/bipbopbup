@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.192.28
 ```
@@ -247,3 +247,4 @@ su - root
 ### Mimikatz
 
 # Lateral Movement
+

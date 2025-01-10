@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.133.210
 ```
@@ -61,3 +61,4 @@ chmod u+s /bin/bash
 ### Mimikatz
 
 # Lateral Movement
+

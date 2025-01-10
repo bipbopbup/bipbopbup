@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.177.161
 ```
@@ -137,4 +137,5 @@ crontab -l
 ```
 
 ### Mimikatz
+
 

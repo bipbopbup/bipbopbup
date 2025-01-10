@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.102.29
 ```
@@ -61,3 +61,4 @@ sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh
 ### Mimikatz
 
 # Lateral Movement
+

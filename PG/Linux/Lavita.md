@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.194.38
 ```
@@ -66,3 +66,4 @@ APP_KEY=base64:zfXJipTpbCyrZHRDpn0/NmdpHTbAl7/hCMf476EP1LU=
 ### Mimikatz
 
 # Lateral Movement
+

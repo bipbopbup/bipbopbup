@@ -1,4 +1,4 @@
-#InProgress 
+#Pwned! 
 ```IP
 192.168.140.41
 ```
@@ -67,3 +67,4 @@ we copy it and we wait for the reverse shell
 ### Mimikatz
 
 # Lateral Movement
+
