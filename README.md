@@ -1,5 +1,5 @@
 # About me
-Hello, I am Lucas Marco, a Spanish Pentester and Cybersecurity Analyst. I studied Software Engineering at university and it was during this time that I developed an interest in cybersecurity. After that I worked as a developer and finally as a cybersecurity analyst, where I learned how to perform security audits, develop testing tools with different programming languages, write reports and perform pentests on very different targets such as network devices, operating systems, web pages, etc.
+Hello, I am Lucas Marco, a Spanish Pentester and Cybersecurity Analyst. I studied Software Engineering at university and it was during this time that I developed an interest in cybersecurity. After that I worked as a developer and finally as a cybersecurity analyst, where I learned how to perform security audits, develop testing tools with different programming languages, write reports and perform pentests on very different targets such as network devices, operating systems, web pages, etc. Currently I am working my way to achieve OSCP certification!
 
 
 Here I will mainly upload the reports for the machines I have owned, in order to improve my reporting skills as well as to get a solid understanding of the hacking process. This reports will encompass for the moment Hackthebox and Offsec Proving Grounds laboratories!
@@ -7,6 +7,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 ## Writeups
 ### Offsec Proving Grounds
 #### AD
+
 -  [Access](PG/AD/Access.md)
 -  [Heist](PG/AD/Heist.md)
 -  [Hokkaido](PG/AD/Hokkaido.md)
@@ -14,6 +15,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 -  [Nara](PG/AD/Nara.md)
 -  [Resourced](PG/AD/Resourced.md)
 #### Linux
+
 -  [Assignment](PG/Linux/Assignment.md)
 -  [Astronaut](PG/Linux/Astronaut.md)
 -  [Blackgate](PG/Linux/Blackgate.md)
@@ -56,6 +58,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 - [Twiggy](PG/Linux/Twiggy.md)
 - [Zipper](PG/Linux/Zipper.md)
 #### Windows
+
 - [Algernon](PG/Windows/Algernon.md)
 - [AuthBy](PG/Windows/AuthBy.md)
 - [Craft](PG/Windows/Craft.md)
@@ -75,6 +78,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 - [Vector](PG/Windows/Vector.md)
 
 ### HackTheBox
+
 - [Active](HTB/Active.md)
 - [Builder](HTB/Builder.md)
 - [Jeeves](HTB/Jeeves.md)
