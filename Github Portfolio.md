@@ -1,4 +1,0 @@
-Hello, I am Lucas Marco, a Spanish pentester and cybersecurity analyst. I studied Software Engineering at university and it was during this time that I developed an interest in cybersecurity. After that I worked as a developer and finally as a cybersecurity analyst, where I learned how to perform security audits, develop testing tools with different programming languages, write reports and perform pentests on very different targets such as network devices, operating systems, web pages, etc.
-
-
-Here I will mainly upload the reports for the machines I have owned, in order to improve my reporting skills as well as to get a solid understanding of the hacking process. This reports will encompass for the moment Hackthebox and Offsec Proving Grounds laboratories!
