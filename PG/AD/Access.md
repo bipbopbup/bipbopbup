@@ -1,4 +1,4 @@
-#Pwned #Windows #AD #Tokens #FileUpload #Updated
+#Pwned #Windows #AD #TokenAbuse #FileUpload #Updated
 ```IP
 192.168.232.187
 ```
