@@ -14,6 +14,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 -  [Nagoya](PG/AD/Nagoya.md)
 -  [Nara](PG/AD/Nara.md)
 -  [Resourced](PG/AD/Resourced.md)
+
 #### Linux
 
 -  [Assignment](PG/Linux/Assignment.md)
@@ -57,6 +58,7 @@ Here I will mainly upload the reports for the machines I have owned, in order to
 - [SPX](PG/Linux/SPX.md)
 - [Twiggy](PG/Linux/Twiggy.md)
 - [Zipper](PG/Linux/Zipper.md)
+
 #### Windows
 
 - [Algernon](PG/Windows/Algernon.md)
