@@ -1,13 +1,19 @@
-#Pwned! 
+#Pwned 
+```IP
+192.168.192.147
+```
 
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.192.147 -vvv -p- -oN enum/full
 ```
-
+The output being:
 ```
-
-## Nmap UDP
-
-
+Host: 192.168.192.147 ()        Status: Up
+Host: 192.168.192.147 ()        Ports: 22/open/tcp//ssh//OpenSSH 8.4 (protocol 2.0)/, 111/closed/tcp//rpcbind///, 139/closed/tcp//netbios-ssn///, 443/closed/tcp//https///, 445/closed/tcp//microsoft-ds///, 17445/open/tcp//unknown///, 30455/open/tcp//http//nginx 1.18.0/, 50080/open/tcp//http//Apache httpd 2.4.46 ((Unix) PHP|7.4.15)/       Ignored State: filtered (65527)
+```
 # Enumeration
 
 ## HTTP

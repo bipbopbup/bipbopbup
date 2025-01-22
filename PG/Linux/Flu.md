@@ -2,7 +2,24 @@
 ```IP
 192.168.140.41
 ```
-# Enumeration
+## Enumeration
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.140.41 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT     STATE SERVICE       REASON         VERSION
+22/tcp   open  ssh           syn-ack ttl 61 OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   256 02:79:64:84:da:12:97:23:77:8a:3a:60:20:96:ee:cf (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEXrRUno9oC8lTzQc4mkRYkhVE1WFraJqALzhn+4EmH4j57s4WioLYYYESpMPsdluWAXJreN+LVlUL/5UteMBbI=
+|   256 dd:49:a3:89:d7:57:ca:92:f0:6c:fe:59:a6:24:cc:87 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIITU00dnwzhT+PFW6y7qRlFYCQ0UzFakp4R4NIq5TWiS
+8090/tcp open  opsmessaging? syn-ack ttl 61
+8091/tcp open  jamlink?      syn-ack ttl 61
+```
 Ubuntu 1ubuntu8.5
 ## HTTP 8091
 Location: http://localhost:8090/login.action?os_destination=%2Findex.action&permissionViolation=true

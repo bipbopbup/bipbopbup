@@ -1,22 +1,19 @@
-#Pwned! 
+#Pwned
 ```
 192.168.176.23
 ```
 
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.176.23 -vvv -p- -oN enum/full
 ```
-
-```
-
-## Nmap UDP
-
-
-# Enumeration
 
 ## HTTP
 
-
 ```
+searchsploit codo
 ```
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241001162011.png?raw=true)
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241001162056.png?raw=true)

@@ -1,6 +1,14 @@
 #Pwned! 
-
+```
+192.168.214.62
+```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.214.62 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE REASON         VERSION
 22/tcp   open  ssh     syn-ack ttl 61 OpenSSH 7.4 (protocol 2.0)
@@ -27,10 +35,6 @@ PORT     STATE SERVICE REASON         VERSION
 |_  Supported Methods: GET HEAD POST OPTIONS
 |_http-open-proxy: Proxy might be redirecting requests
 ```
-
-
-## Nmap UDP
-
 
 # Enumeration
 

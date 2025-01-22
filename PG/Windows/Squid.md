@@ -1,5 +1,14 @@
-#Pawned 
+#Pawned
+```IP
+192.168.185.189
+```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.185.189 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE       VERSION
 135/tcp  open  msrpc         Microsoft Windows RPC

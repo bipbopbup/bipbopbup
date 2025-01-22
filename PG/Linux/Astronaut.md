@@ -1,8 +1,15 @@
-#Pwned! 
+#Pwned
 ```IP
 192.168.165.12
 ```
+## Enumeration
 ## Nmap
+
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.165.12 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT   STATE SERVICE REASON         VERSION
 22/tcp open  ssh     syn-ack ttl 61 OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
@@ -26,9 +33,6 @@ Service Info: Host: 127.0.0.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
 
-## Nmap UDP
-
-
 # Enumeration
 
 ## HTTP
@@ -41,6 +45,7 @@ https://www.exploit-db.com/exploits/49973
 ## Manual
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016181152.png?raw=true)
+
 ```
 $2y$10$dlTNg17RfN4pkRctRm1m2u8cfTHHz7Im.m61AYB9UtLGL2PhlJwe.
 ```
@@ -50,9 +55,8 @@ alex:x:1000:1000::/home/alex:/bin/bash
 ## Automated
 
 ### Peass
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016181807.png?raw=true)
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016184926.png?raw=true)
-
-### Mimikatz
 
 

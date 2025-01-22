@@ -1,8 +1,41 @@
-#Pwned! 
+#Pwned
 ```IP
 192.168.167.119
 ```
-# Enumeration
+## Enumeration
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.167.119 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT     STATE SERVICE       REASON          VERSION
+21/tcp   open  ftp           syn-ack ttl 125 Microsoft ftpd       
+| ftp-syst:
+|_  SYST: Windows_NT
+80/tcp   open  http          syn-ack ttl 125 Microsoft IIS httpd 10.0
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).                 
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods:                            
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+135/tcp  open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack ttl 125 Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack ttl 125 Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+2290/tcp open  http          syn-ack ttl 125 Microsoft IIS httpd 10.0
+| http-methods:                  
+|   Supported Methods: OPTIONS TRACE GET HEAD POST    
+|_  Potentially risky methods: TRACE
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+|_http-server-header: Microsoft-IIS/10.0     
+3389/tcp open  ms-wbt-server syn-ack ttl 125 Microsoft Terminal Services
+5985/tcp open  http          syn-ack ttl 125 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+```
 
 ## HTTP 80
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241219152843.png?raw=true)

@@ -2,7 +2,13 @@
 ```IP
 192.168.227.40
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.227.40 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT      STATE SERVICE            REASON          VERSION                              53/tcp    open  domain             syn-ack ttl 125 Microsoft DNS 6.0.6001 (17714650) (Windows Server 2008 SP1)        
 | dns-nsid:                                                                             |_  bind.version: Microsoft DNS 6.0.6001 (17714650)                                     135/tcp   open  msrpc              syn-ack ttl 125 Microsoft Windows RPC                139/tcp   open  netbios-ssn        syn-ack ttl 125 Microsoft Windows netbios-ssn

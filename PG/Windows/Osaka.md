@@ -2,7 +2,13 @@
 ```
 192.168.208.20
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.208.20 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE       REASON          VERSION
 21/tcp   open  ftp           syn-ack ttl 125

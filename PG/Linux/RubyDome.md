@@ -1,6 +1,14 @@
-#Pwned! 
-
+#Pwned
+```IP
+192.168.198.22
+```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.198.22 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE REASON         VERSION
 22/tcp   open  ssh     syn-ack ttl 61 OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
@@ -17,13 +25,7 @@ PORT     STATE SERVICE REASON         VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-## Nmap UDP
-
-
-# Enumeration
-
 ## HTTP
-
 ### Directories
 /pdf
 /__sinatra__

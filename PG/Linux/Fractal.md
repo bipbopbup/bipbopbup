@@ -2,7 +2,13 @@
 ```
 192.168.205.233
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.205.233 -vvv -p- -oN enum/full
+```
+The output being:
 ```PORT   STATE SERVICE REASON         VERSION
 21/tcp open  ftp     syn-ack ttl 61 ProFTPD
 22/tcp open  ssh     syn-ack ttl 61 OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)

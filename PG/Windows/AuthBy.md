@@ -2,11 +2,17 @@
 ```IP
 192.168.224.46
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.224.46 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE            REASON          VERSION
 21/tcp   open  ftp                syn-ack ttl 125 zFTPServer 6.0 build 2011-10-17
-| ftp-anon: Anonymous FTP login allowed (FTP code 230)                                                                
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
 | total 9680     
 | ----------   1 root     root      5610496 Oct 18  2011 zFTPServer.exe
 | ----------   1 root     root           25 Feb 10  2011 UninstallService.bat
@@ -21,8 +27,8 @@ PORT     STATE SERVICE            REASON          VERSION
 | dr-xr-xr-x   1 root     root          512 Nov 08  2011 certificates
 |_dr-xr-xr-x   1 root     root          512 Aug 03 03:34 accounts
 242/tcp  open  http               syn-ack ttl 125 Apache httpd 2.2.21 ((Win32) PHP/5.3.8)
-|_http-server-header: Apache/2.2.21 (Win32) PHP/5.3.8                                                                 
-| http-methods:                                                                                                       
+|_http-server-header: Apache/2.2.21 (Win32) PHP/5.3.8
+| http-methods:
 |_  Supported Methods: GET HEAD POST OPTIONS
 | http-auth:                                  
 | HTTP/1.1 401 Authorization Required\x0D

@@ -2,9 +2,42 @@
 ```
 192.168.206.240
 ```
-# Enumeration
+## Enumeration
+## Nmap
 
-Debian 10+deb10u2
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.206.240 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT     STATE SERVICE          REASON         VERSION
+22/tcp   open  ssh              syn-ack ttl 61 OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 74:ba:20:23:89:92:62:02:9f:e7:3d:3b:83:d4:d9:6c (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGGcX/x/M6J7Y0V8EeUt0FqceuxieEOe2fUH2RsY3XiSxByQWNQi+XSrFElrfjdR2sgnauIWWhWibfD+kTmSP5gkFcaoSsLtgfMP/2G8yuxPSev+9o1N18gZchJneakItNTaz1ltG1W//qJPZDHmkDneyv798f9ZdXBzidtR5/+2ArZd64bldUxx0irH0lNcf+I
+CuVlhOZyXGvSx/ceMCRozZrW2JQU+WLvs49gC78zZgvN+wrAZ/3s8gKPOIPobN3ObVSkZ+zngt0Xg/Zl11LLAbyWX7TupAt6lTYOvCSwNVZURyB1dDdjlMAXqT/Ncr4LbP+tvsiI1BKlqxx4I2r
+|   256 54:8f:79:55:5a:b0:3a:69:5a:d5:72:39:64:fd:07:4e (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCpAb2jUKovAahxmPX9l95Pq9YWgXfIgDJw0obIpOjOkdP3b0ukm/mrTNgX2lg1mQBMlS3lzmQmxeyHGg9+xuJA=
+|   256 7f:5d:10:27:62:ba:75:e9:bc:c8:4f:e2:72:87:d4:e2 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0omUJRIaMtPNYa4CKBC+XUzVyZsJ1QwsksjpA/6Ml+
+80/tcp   open  http             syn-ack ttl 61 Apache httpd 2.4.38
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: 403 Forbidden
+| http-methods: 
+|_  Supported Methods: HEAD GET POST OPTIONS
+139/tcp  open  netbios-ssn      syn-ack ttl 61 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn      syn-ack ttl 61 Samba smbd 4.9.5-Debian (workgroup: WORKGROUP)
+3000/tcp open  http             syn-ack ttl 61 Thin httpd
+|_http-server-header: thin
+|_http-title: Cassandra Web
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-favicon: Unknown favicon MD5: 68089FD7828CD453456756FE6E7C4FD8
+8021/tcp open  freeswitch-event syn-ack ttl 61 FreeSWITCH mod_event_socket
+```
+
+Looks like our target system is running a Debian 10.
 
 ## SMB
 Port 139 - Samba smbd 3.X - 4.X
@@ -18,7 +51,6 @@ backup          READ            Backup web directory shares
 IPC$                            IPC Service (Samba 4.9.5-Debian)
 ```
 PASS POL
-![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241121171143.png?raw=true)
 ```
 nxc smb 192.168.229.240 -u '' -p '' --rid-brute 3000
 ```

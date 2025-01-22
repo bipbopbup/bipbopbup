@@ -3,6 +3,33 @@
 10.10.11.10
 ```
 # Enumeration
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.11.10 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT     STATE SERVICE REASON         VERSION
+22/tcp   open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ+m7rYl1vRtnm789pH3IRhxI4CNCANVj+N5kovboNzcw9vHsBwvPX3KYA3cxGbKiA0VqbKRpOHnpsMuHEXEVJc=
+|   256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtuEdoYxTohG80Bo6YCqSzUY9+qbnAFnhsk4yAZNqhM
+8080/tcp open  http    syn-ack ttl 62 Jetty 10.0.18
+| http-open-proxy: Potentially OPEN proxy.
+|_Methods supported:CONNECTION
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: Dashboard [Jenkins]
+|_http-server-header: Jetty(10.0.18)
+|_http-favicon: Unknown favicon MD5: 23E8C7BD78E8CD826C5A6073B15068B1
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241223102435.png?raw=true)
 
 ## HTTP 8080

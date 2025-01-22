@@ -3,7 +3,31 @@
 10.10.11.132
 ```
 # Enumeration
-
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.11.132 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT     STATE SERVICE REASON          VERSION
+80/tcp   open  http    syn-ack ttl 127 Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: Mega Engines
+5985/tcp open  http    syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+8080/tcp open  http    syn-ack ttl 127 Jetty 9.4.43.v20210629
+|_http-favicon: Unknown favicon MD5: 23E8C7BD78E8CD826C5A6073B15068B1
+|_http-server-header: Jetty(9.4.43.v20210629)
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: Site doesn't have a title (text/html;charset=utf-8).
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+```
 ## HTTP 80
 Microsoft IIS httpd 10.0
 ## HTTP 8080

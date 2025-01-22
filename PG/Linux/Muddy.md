@@ -2,7 +2,13 @@
 ```IP
 192.168.177.161
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.177.161 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE REASON         VERSION
 22/tcp   open  ssh     syn-ack ttl 61 OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)

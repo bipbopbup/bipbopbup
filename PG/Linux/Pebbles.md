@@ -1,10 +1,15 @@
-#Pwned! 
-# IP
+#Pwned
 ```
 192.168.198.52
 ```
 
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.198.52 -vvv -p- -oN enum/full
+```
+The output being:
 
 ```
 PORT     STATE SERVICE REASON         VERSION

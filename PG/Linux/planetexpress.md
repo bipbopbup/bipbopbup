@@ -1,15 +1,13 @@
-#Pwned! 
-
+#Pwned
+```IP
+192.168.185.205
+```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.185.205 -vvv -p- -oN enum/full
 ```
-
-```
-
-## Nmap UDP
-
-
-# Enumeration
-
 ## HTTP
 
 https://github.com/picocms/Pico/blob/master/plugins/DummyPlugin.php

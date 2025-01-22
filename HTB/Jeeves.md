@@ -3,7 +3,28 @@
 10.10.10.63
 ```
 # Enumeration
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.10.63 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT      STATE SERVICE      REASON          VERSION
+80/tcp    open  http         syn-ack ttl 127 Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: Ask Jeeves
+135/tcp   open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+445/tcp   open  microsoft-ds syn-ack ttl 127 Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+50000/tcp open  http         syn-ack ttl 127 Jetty 9.4.z-SNAPSHOT
+|_http-title: Error 404 Not Found
+|_http-server-header: Jetty(9.4.z-SNAPSHOT)
+Service Info: Host: JEEVES; OS: Windows; CPE: cpe:/o:microsoft:windows
 
+```
 ## HTTP 80
 We get an image error everytime we search for something in the application. The error displays the MSQLS version: Microsoft SQL Server 2005 9.00.4053.00
 Fuzzing directories doesn't seem to reveal anything interesting.

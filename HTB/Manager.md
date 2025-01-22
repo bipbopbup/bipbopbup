@@ -1,9 +1,46 @@
 #Pwned! 
 ```IP
-
+10.10.11.236
 ```
 # Enumeration
-
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.11.236 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT      STATE SERVICE       REASON          VERSION
+53/tcp    open  domain        syn-ack ttl 127 Simple DNS Plus     
+80/tcp    open  http          syn-ack ttl 127 Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: Manager
+88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2024-12-29 16:29:33Z)
+135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds? syn-ack ttl 127     
+464/tcp   open  kpasswd5?     syn-ack ttl 127
+593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+1433/tcp  open  ms-sql-s      syn-ack ttl 127 Microsoft SQL Server 2019 15.00.2000.00; RTM
+3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  ssl/ldap      syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing
+49667/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49689/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49690/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49691/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49721/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49768/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+```
 ## HTTP 80
 nothing interesting after fuzzing and analyzing source code
 ## Kerberos 88

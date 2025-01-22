@@ -2,7 +2,13 @@
 ```IP
 192.168.162.177
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.162.177 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT   STATE SERVICE REASON          VERSION
 22/tcp open  ssh     syn-ack ttl 125 OpenSSH for_Windows_7.7 (protocol 2.0)

@@ -3,7 +3,13 @@
 192.168.195.183
 ```
 
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.195.183 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT   STATE  SERVICE  REASON         VERSION
 20/tcp closed ftp-data reset ttl 61

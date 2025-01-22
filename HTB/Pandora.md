@@ -1,10 +1,17 @@
 #Pwned! 
 ```IP
-
+10.10.11.136
 ```
 # Enumeration
-## SSH
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.11.136 -vvv -p- -oN enum/full
+```
+The output being:
+```
 
+```
 ## HTTP 80
 Apache httpd 2.4.41
 ## SNMP

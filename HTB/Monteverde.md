@@ -1,10 +1,38 @@
-#Pwned! 
+#Pwned
 ```IP
-
+10.10.11.10
 ```
 # Enumeration
-I tried bruteforcing kerberos usernames and smb enumeration to no avail. Let's try with LDAP:
-
+## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 10.10.11.10 -vvv -p- -oN enum/full
+```
+The output being:
+```
+PORT      STATE SERVICE       REASON          VERSION
+53/tcp    open  domain        syn-ack ttl 127 Simple DNS Plus
+88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2024-12-22 09:50:25Z)
+135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds? syn-ack ttl 127
+464/tcp   open  kpasswd5?     syn-ack ttl 127
+593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped    syn-ack ttl 127
+3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: MEGABANK.LOCAL0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped    syn-ack ttl 127
+5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing
+49667/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49673/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49676/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49693/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+Service Info: Host: MONTEVERDE; OS: Windows; CPE: cpe:/o:microsoft:windows
+```
 ## LDAP
 ```
 ldapsearch -H ldap://10.10.10.172 -x -b "DC=MEGABANK,DC=LOCAL"

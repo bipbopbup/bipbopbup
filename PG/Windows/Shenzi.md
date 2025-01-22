@@ -2,7 +2,13 @@
 ```IP
 192.168.171.55
 ```
+## Enumeration
 ## Nmap
+As always I start enumerating target ports with nmap:
+```Bash
+sudo nmap -sCV 192.168.171.55 -vvv -p- -oN enum/full
+```
+The output being:
 ```
 PORT     STATE SERVICE       REASON          VERSION                                    21/tcp   open  ftp           syn-ack ttl 125 FileZilla ftpd 0.9.41 beta   
 | ftp-syst:                                                                             |_  SYST: UNIX emulated by FileZilla                                                    80/tcp   open  http          syn-ack ttl 125 Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6)
