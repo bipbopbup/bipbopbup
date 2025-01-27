@@ -1,4 +1,4 @@
-#Pwned
+#Pwned #SUID #
 ```IP
 192.168.165.12
 ```
@@ -33,30 +33,35 @@ Service Info: Host: 127.0.0.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
 
-# Enumeration
-
 ## HTTP
+Through some basic enumeration and the nmap output we conclude that the target HTTP service is running a vulnerable version of GravCMS, which has some exploits online such as:
 https://www.exploit-db.com/exploits/49973
+
+Once edited to match our basic auth request to `/admin`, we get a reverse shell as www-data:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016180934.png?raw=true)
 
 # PrivEsc
-
 ## Manual
+Here we find an admin.yaml file which contains a hashed password:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016181152.png?raw=true)
 
 ```
 $2y$10$dlTNg17RfN4pkRctRm1m2u8cfTHHz7Im.m61AYB9UtLGL2PhlJwe.
 ```
+However it seems like it is not possible to crack it.
 
+When looking for other users in /etc/passwd we get alex user:
 alex:x:1000:1000::/home/alex:/bin/bash
 
+Once again, this is good information to have, but it does not seem to be related to any privilege escalation path.
 ## Automated
 
-### Peass
+### LinPeass and SUID PE
+When executing linpeas we get a suspicious cronjob. This cronjob uses php, which has the SUID bit activated as shown below. With the help of GTFObins webpage we discover that it is possible to execute a shell with php7.4 as root.
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016181807.png?raw=true)
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241016184926.png?raw=true)
 
-
+Pwned!
