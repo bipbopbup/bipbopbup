@@ -1,4 +1,4 @@
-#Pwned #SUID #
+#Pwned #SUID
 ```IP
 192.168.165.12
 ```
