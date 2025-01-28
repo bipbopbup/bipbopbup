@@ -1,8 +1,8 @@
-#Pwned! 
+#Pwned 
 ```IP
 192.168.180.231
 ```
-## Enumeration
+# Enumeration
 ## Nmap
 
 As always I start enumerating target ports with nmap:
