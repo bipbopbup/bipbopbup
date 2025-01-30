@@ -113,9 +113,11 @@ We get access to raven and its user.txt flag.
 
 ## Manual
 After some unsuccessful manual enumeration, knowing that it is a windows domain, we are left with certificates (ADCS) and Bloodhound.
+
 ```
 certipy-ad find -vulnerable -stdout -u raven@10.10.11.236 -p 'R4v3nBe5tD3veloP3r!123'
 ```
+
 ![](https://github.com/bipbopbup/writeups/blob/main/Media/Pasted%20image%2020241229122653.png?raw=true)
 We can see how to escalate this vulnerability in the official certipy page:
 https://github.com/ly4k/Certipy?tab=readme-ov-file#esc7

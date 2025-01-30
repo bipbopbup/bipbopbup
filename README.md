@@ -1,5 +1,5 @@
 # About me
-Hi there! I am Lucas Marco, a **Spanish Pentester** and **Cybersecurity Analyst**. I studied **Software Engineering** at university and it was during this time that I developed an interest in cybersecurity. After that I worked as a developer and finally as a cybersecurity analyst performing **penetration tests on very different systems such as Network Devices, Operating Systems, Web Pages**, developing testing tools with **Bash, Powershell** and **Python**, and writting reports. Currently I am working my way to achieve **OSCP** certification!
+Hi there! I am Lucas Marco, a **Spanish Pentester** and **Cybersecurity Analyst**. I studied **Software Engineering** at university and it was during this time that I developed an interest in cybersecurity. After that I worked as a developer and finally as a cybersecurity analyst performing **penetration tests on very different systems such as Network Devices, Operating Systems, Web Pages**, developing testing tools with **Bash, Powershell** and **Python**, and writing reports. Currently I am working my way to achieve **OSCP** certification!
 
 Here I will mainly upload the reports for the machines I have owned in order to improve my reporting skills as well as to get a solid understanding of the hacking process. This reports encompass Hackthebox and Offsec Proving Grounds laboratories for the time being!
 
